@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Khalil Meftehi · Junior Software Engineer</title>
+  <meta name="description" content="Portfolio of Khalil Meftehi, junior software engineer in Bochum: Java, Spring Boot, Angular, Python and Flutter projects in a block world.">
+  <meta name="theme-color" content="#3f8a22">
+  <meta name="color-scheme" content="dark light">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Khalil Meftehi · Junior Software Engineer">
+  <meta property="og:description" content="Java, Spring Boot, Angular, Python and Flutter projects in an explorable block world.">
+  <meta property="og:image" content="preview.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="manifest" href="manifest.json">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Pixelify+Sans:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Khalil Meftehi",
+    "jobTitle": "Junior Software Engineer",
+    "worksFor": { "@type": "Organization", "name": "ITQ" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of Duisburg-Essen" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Bochum", "addressCountry": "DE" },
+    "email": "mailto:meftehikhalil78@gmail.com",
+    "sameAs": ["https://github.com/Aldafoor3", "https://www.linkedin.com/in/khalilmeftehi-bb72b3192/"],
+    "knowsLanguage": ["ar", "fr", "en", "de"],
+    "knowsAbout": ["Java", "Spring Boot", "Angular", "TypeScript", "Python", "C++", "SQL", "Flutter"]
+  }
+  </script>
+</head>
+<body>
+  <canvas id="world" aria-hidden="true"></canvas>
+
+  <!-- Loading screen -->
+  <div id="loader" class="loader" role="status" aria-live="polite">
+    <div class="loader-inner">
+      <p class="loader-name">Khalil Meftehi</p>
+      <p class="loader-title" id="loader-title">Generating world</p>
+      <p class="loader-step" id="loader-step">&nbsp;</p>
+      <div class="loader-bar"><div class="loader-fill" id="loader-fill"></div></div>
+      <p class="loader-tip" id="loader-tip"></p>
+    </div>
+  </div>
+
+  <!-- Top bar -->
+  <header class="topbar">
+    <a class="brand" href="#home" data-go="0">
+      <img id="brand-icon" alt="" width="28" height="30">
+      <span>Khalil Meftehi</span>
+    </a>
+    <div class="controls">
+      <div class="lang" id="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="de">DE</button>
+        <button type="button" data-lang="fr">FR</button>
+        <button type="button" data-lang="ar">ع</button>
+      </div>
+      <button type="button" class="mc-btn square" id="btn-night" aria-pressed="false"></button>
+      <button type="button" class="mc-btn square" id="btn-sound" aria-pressed="false"></button>
+    </div>
+  </header>
+
+  <!-- One panel per place in the world -->
+  <main id="panels">
+    <section class="panel" id="panel-home" data-i="0" aria-labelledby="h-home"></section>
+    <section class="panel" id="panel-about" data-i="1" aria-labelledby="h-about"></section>
+    <section class="panel" id="panel-journey" data-i="2" aria-labelledby="h-journey"></section>
+    <section class="panel" id="panel-skills" data-i="3" aria-labelledby="h-skills"></section>
+    <section class="panel" id="panel-projects" data-i="4" aria-labelledby="h-projects"></section>
+    <section class="panel" id="panel-achievements" data-i="5" aria-labelledby="h-achievements"></section>
+    <section class="panel" id="panel-contact" data-i="6" aria-labelledby="h-contact"></section>
+  </main>
+
+  <!-- Hotbar navigation -->
+  <nav class="hud" aria-label="Sections">
+    <p class="hud-label" id="hud-label" aria-hidden="true"></p>
+    <div class="xp" aria-hidden="true">
+      <span class="xp-level" id="xp-level">1</span>
+      <div class="xp-fill" id="xp-fill"></div>
+    </div>
+    <ol class="hotbar" id="hotbar"></ol>
+    <p class="hint" id="hint"></p>
+  </nav>
+
+  <!-- Village guide chatbot -->
+  <button type="button" class="chat-toggle mc-btn" id="chat-toggle" aria-expanded="false" aria-controls="chat">
+    <img id="villager-icon" alt="" width="32" height="40">
+  </button>
+  <div class="chat" id="chat" hidden>
+    <div class="chat-head">
+      <img id="villager-icon-2" alt="" width="20" height="25">
+      <strong id="chat-title"></strong>
+      <button type="button" class="chat-close" id="chat-close" aria-label="Close">×</button>
+    </div>
+    <div class="chat-log" id="chat-log" aria-live="polite"></div>
+    <div class="chat-chips" id="chat-chips"></div>
+    <form class="chat-form" id="chat-form">
+      <input id="chat-input" type="text" autocomplete="off" maxlength="200">
+      <button type="submit" class="mc-btn" id="chat-send"></button>
+    </form>
+  </div>
+
+  <!-- Modal for projects and certificates -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button type="button" class="modal-close mc-btn square" id="modal-close" aria-label="Close">×</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <noscript><p class="noscript">This portfolio needs JavaScript. CV: <a href="files/Khalil-Meftehi-CV-DE.pdf">German</a> · <a href="mailto:meftehikhalil78@gmail.com">Email</a></p></noscript>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha384-CI3ELBVUz9XQO+97x6nwMDPosPR5XvsxW2ua7N1Xeygeh1IxtgqtCkGfQY9WWdHu" crossorigin="anonymous" defer></script>
+  <script src="js/data.js" defer></script>
+  <script src="js/i18n.js" defer></script>
+  <script src="js/world.js" defer></script>
+  <script src="js/ui.js" defer></script>
+</body>
+</html>
