@@ -16,6 +16,7 @@ then visit http://127.0.0.1:8765
 | Navigation, chat, contact form, sound | `js/ui.js` |
 | Look and layout | `css/style.css` |
 | CVs, photo, certificates | `files/` |
+| Case-study figures (WebP, no raw data) | `files/projects/` |
 
 After each deploy, bump `CACHE` in `sw.js` so visitors get the new files.
 

@@ -528,14 +528,15 @@
   function buildProjects(s) {
     const g = stationGroup(s);
     const ids = window.PROJECTS.map((p) => p.id);
-    const labels = { gruppe: 'GRUPPE-I', bolleye: 'BÖLLEYE', mon: 'MON' };
+    const labels = { glucose: 'GLUCOSE', generio: 'GENERIO', gruppe: 'GRUPPE-I', bolleye: 'BÖLLEYE', mon: 'MON' };
+    const half = Math.ceil((ids.length - 1) * 0.85) + 1; // floor reaches one block past the outer chests
     ids.forEach((id, n) => {
       const x = (n - (ids.length - 1) / 2) * 1.7;
       chest(g, id, x);
       sign(g, labels[id] || id.toUpperCase(), x, -0.95, 0, 1.25);
     });
-    for (let lx = -3; lx <= 3; lx++) for (let lz = -1; lz <= 1; lz++) sPut(s, 'planks', lx, -1, lz, true); // floor under the chests
-    hitBox(s, 7, 4, 4);
+    for (let lx = -half; lx <= half; lx++) for (let lz = -1; lz <= 1; lz++) sPut(s, 'planks', lx, -1, lz, true); // floor under the chests
+    hitBox(s, half * 2 + 1, 4, 4);
   }
 
   function buildBeacon(s) {
@@ -761,11 +762,13 @@
   }
 
   /* ---------- camera framing ---------- */
-  // per-station camera: distance behind the pond centre, height, and look offset
+  // per-station camera: distance behind the pond centre, height, look offset, and avatar offset (radians)
   function stationView(i) {
-    if (i === 0) return { back: 7, h: 11, look: 2.9 };
-    if (i === 4) return { back: -3.5, h: 6.2, look: 2.6 }; // chests are small: come closer
-    return { back: 2.4, h: 7.2, look: 4.2 };
+    if (i === 0) return { back: 7, h: 11, look: 2.9, off: AVATAR_OFFSET };
+    if (i === 4) return layout === 'bottom' // chests are small: come closer, avatar steps aside (phones need the whole row in a narrow view)
+      ? { back: -0.6, h: 6.8, look: 2.8, off: 0.46 }
+      : { back: -2.2, h: 6.6, look: 2.6, off: 0.46 };
+    return { back: 2.4, h: 7.2, look: 4.2, off: AVATAR_OFFSET };
   }
   function camAt(theta, view, out) {
     const c = Math.cos(theta), s = Math.sin(theta);
@@ -777,7 +780,7 @@
     return out;
   }
   function mixView(a, b, t) {
-    return { back: a.back + (b.back - a.back) * t, h: a.h + (b.h - a.h) * t, look: a.look + (b.look - a.look) * t };
+    return { back: a.back + (b.back - a.back) * t, h: a.h + (b.h - a.h) * t, look: a.look + (b.look - a.look) * t, off: a.off + (b.off - a.off) * t };
   }
 
   /* ---------- picking ---------- */
@@ -830,15 +833,16 @@
       camTheta = travel.from + travel.delta * e;
       const prev = avatarTheta;
       const pa = clamp((now - travel.t0) / (travel.dur * 0.92), 0, 1);
-      avatarTheta = travel.from + travel.delta * ease(pa) - AVATAR_OFFSET;
-      walkSpeed = Math.abs(avatarTheta - prev) / Math.max(dt, 0.001);
       const v = mixView(stationView(travel.fromIndex), stationView(travel.toIndex), e);
+      avatarTheta = travel.from + travel.delta * ease(pa) - v.off;
+      walkSpeed = Math.abs(avatarTheta - prev) / Math.max(dt, 0.001);
       camAt(camTheta, v, view);
       if (p >= 1) travel = null;
     } else {
       camTheta = stationAngle(current);
-      avatarTheta = camTheta - AVATAR_OFFSET;
-      camAt(camTheta, stationView(current), view);
+      const v = stationView(current);
+      avatarTheta = camTheta - v.off;
+      camAt(camTheta, v, view);
     }
     if (intro) {
       const p = clamp((now - intro.t0) / intro.dur, 0, 1);

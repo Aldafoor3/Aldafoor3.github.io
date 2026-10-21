@@ -380,6 +380,23 @@ body.no-webgl {
 .modal-box .bullets li::before { background: var(--green-dark); box-shadow: 2px 2px 0 #fff; }
 .modal-box .chip { color: var(--gui-text); background: var(--slot); box-shadow: inset 2px 2px 0 #fff, inset -2px -2px 0 #555; border: 2px solid #000; }
 .modal img.cert { width: 100%; border: 3px solid #000; margin-top: 12px; }
+/* Case study parts */
+.modal-box .steps { padding-inline-start: 24px; display: grid; gap: 6px; }
+.modal-box .steps li::marker { font-weight: 700; color: var(--green-dark); }
+.table-wrap { overflow-x: auto; margin: 8px 0 12px; border: 3px solid #000; box-shadow: inset 2px 2px 0 #fff; }
+.results { width: 100%; border-collapse: collapse; font-size: 15px; font-variant-numeric: tabular-nums; }
+.results th, .results td { padding: 6px 10px; text-align: start; white-space: nowrap; border-bottom: 2px solid rgba(0, 0, 0, 0.15); }
+.results thead th { background: var(--slot); font-weight: 700; }
+.results tbody tr:first-child { background: rgba(94, 160, 54, 0.22); }
+.results tbody th { font-weight: 600; }
+.shot { margin: 14px 0 4px; }
+.shot img { display: block; width: 100%; height: auto; background: #fff; border: 3px solid #000; }
+.shot figcaption { margin-top: 6px; color: #555; font-size: 14px; }
+.modal-box .note { margin-top: 12px; color: #555; font-size: 14px; }
+@media (max-width: 520px) {
+  .results { font-size: 13px; }
+  .results th, .results td { padding: 5px 6px; white-space: normal; }
+}
 
 /* ===== Toast ===== */
 .toast {

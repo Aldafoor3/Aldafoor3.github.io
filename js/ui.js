@@ -358,15 +358,49 @@
     if (kind === 'project') {
       const pr = window.PROJECTS.find((p) => p.id === id);
       const it = t.projects.items[id];
-      body.innerHTML = `
+      const p = t.projects;
+      const head = `
         <div class="modal-head"><img src="${window.World.iconURL('chestFront')}" alt="" width="52" height="56">
           <div><h2 id="modal-title">${esc(it.name)}</h2><p class="modal-sub">${esc(it.sub)} · ${esc(it.date)} · ${esc(it.context)}</p></div></div>
-        <p>${esc(it.short)}</p>
-        <h3>${esc(t.projects.features)}</h3>
-        <ul class="bullets">${it.features.map((f) => `<li>${esc(f)}</li>`).join('')}</ul>
-        <h3>${esc(t.projects.stack)}</h3>
-        <div>${pr.stack.map((x) => `<span class="chip">${esc(x)}</span>`).join('')}</div>
-        ${pr.link ? `<p style="margin-top:14px"><a class="mc-btn" href="${pr.link}" target="_blank" rel="noopener">${SVG.github} GitHub</a></p>` : ''}`;
+        ${it.official ? `<p class="note">${esc(it.official)}</p>` : ''}
+        <p>${esc(it.short)}</p>`;
+      const stack = `<div>${pr.stack.map((x) => `<span class="chip">${esc(x)}</span>`).join('')}</div>`;
+      const link = pr.link ? `<p style="margin-top:14px"><a class="mc-btn" href="${pr.link}" target="_blank" rel="noopener">${SVG.github} GitHub</a></p>` : '';
+      if (it.problem) {
+        // case study: problem, approach, stack, results, role, links
+        const table = pr.results ? `
+          <div class="table-wrap"><table class="results">
+            <thead><tr>${p.cols.map((c) => `<th scope="col">${esc(c)}</th>`).join('')}</tr></thead>
+            <tbody>${pr.results.map((r) => `<tr>${r.map((c, i) => (i ? `<td>${esc(c)}</td>` : `<th scope="row">${esc(c)}</th>`)).join('')}</tr>`).join('')}</tbody>
+          </table></div>` : '';
+        const figures = (pr.figures || []).map((f, i) => `
+          <figure class="shot"><img src="${f.src}" alt="${esc(it.captions[i])}" width="${f.w}" height="${f.h}" loading="lazy" decoding="async">
+            <figcaption>${esc(it.captions[i])}</figcaption></figure>`).join('');
+        body.innerHTML = head + `
+          <h3>${esc(p.problem)}</h3>
+          <p>${esc(it.problem)}</p>
+          <h3>${esc(p.approach)}</h3>
+          <ol class="steps">${it.features.map((f) => `<li>${esc(f)}</li>`).join('')}</ol>
+          <h3>${esc(p.stack)}</h3>
+          ${stack}
+          <h3>${esc(p.results)}</h3>
+          ${it.resultsIntro ? `<p>${esc(it.resultsIntro)}</p>` : ''}
+          ${table}
+          <ul class="bullets">${it.resultsMore.map((f) => `<li>${esc(f)}</li>`).join('')}</ul>
+          ${figures}
+          <h3>${esc(p.role)}</h3>
+          <p>${esc(it.role)}</p>
+          <h3>${esc(p.links)}</h3>
+          ${link || `<p>${esc(it.linkNote || p.noLink)}</p>`}
+          ${it.note ? `<p class="note">${esc(it.note)}</p>` : ''}`;
+      } else {
+        body.innerHTML = head + `
+          <h3>${esc(p.features)}</h3>
+          <ul class="bullets">${it.features.map((f) => `<li>${esc(f)}</li>`).join('')}</ul>
+          <h3>${esc(p.stack)}</h3>
+          ${stack}
+          ${link}`;
+      }
       if (!modalState || modalState.id !== id) sfx('chest');
       window.World.openChest(id, true);
     } else {
