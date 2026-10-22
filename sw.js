@@ -1,5 +1,5 @@
 /* Offline support: stale-while-revalidate for every GET request. Bump CACHE after each deploy. */
-const CACHE = 'km-portfolio-v2';
+const CACHE = 'km-portfolio-v3';
 const CORE = [
   './', 'index.html', 'manifest.json', 'css/style.css',
   'js/data.js', 'js/i18n.js', 'js/world.js', 'js/ui.js',

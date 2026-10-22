@@ -82,17 +82,17 @@ window.PROJECTS = [
   {
     id: 'gruppe',
     stack: ['Java', 'Spring Boot', 'Angular', 'TypeScript', 'PostgreSQL', 'Leaflet', 'd3', 'WebSocket', 'Docker'],
-    link: ''
+    link: 'https://github.com/Aldafoor3/gruppe-i'
   },
   {
     id: 'bolleye',
     stack: ['Python', 'Flask', 'OpenCV', 'MobileNet-SSD', 'Machine Learning'],
-    link: ''
+    link: 'https://github.com/Aldafoor3/B-lleye'
   },
   {
     id: 'mon',
     stack: ['Java', 'Spring Boot', 'Spring Security', 'JWT', 'MySQL', 'Flutter', 'Dart'],
-    link: ''
+    link: 'https://github.com/Aldafoor3/MON'
   }
 ];
 
