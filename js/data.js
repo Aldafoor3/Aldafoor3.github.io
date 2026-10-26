@@ -55,6 +55,16 @@ window.SKILLS = [
 /* Projects with `results`/`figures` open as a case study. Numbers come from the project's result logs. */
 window.PROJECTS = [
   {
+    id: 'daylight',
+    stack: ['TypeScript', 'Next.js', 'React', 'Tailwind CSS', 'Electron', 'Capacitor', 'Java', 'Media3 ExoPlayer', 'Supabase', 'PostgreSQL'],
+    // private repository: no public link yet
+    link: '',
+    figures: [
+      { src: 'files/projects/daylight-desktop.webp', w: 1200, h: 750 },
+      { src: 'files/projects/daylight-phone.webp', w: 1248, h: 874 }
+    ]
+  },
+  {
     id: 'glucose',
     stack: ['Python', 'PyTorch', 'scikit-learn', 'pandas', 'NumPy', 'LSTM', 'Transformer', 'TCN', 'matplotlib'],
     link: '',

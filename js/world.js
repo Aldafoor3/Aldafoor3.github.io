@@ -528,7 +528,7 @@
   function buildProjects(s) {
     const g = stationGroup(s);
     const ids = window.PROJECTS.map((p) => p.id);
-    const labels = { glucose: 'GLUCOSE', generio: 'GENERIO', gruppe: 'GRUPPE-I', bolleye: 'BÖLLEYE', mon: 'MON' };
+    const labels = { daylight: 'DAYLIGHT', glucose: 'GLUCOSE', generio: 'GENERIO', gruppe: 'GRUPPE-I', bolleye: 'BÖLLEYE', mon: 'MON' };
     const half = Math.ceil((ids.length - 1) * 0.85) + 1; // floor reaches one block past the outer chests
     ids.forEach((id, n) => {
       const x = (n - (ids.length - 1) / 2) * 1.7;
@@ -766,7 +766,7 @@
   function stationView(i) {
     if (i === 0) return { back: 7, h: 11, look: 2.9, off: AVATAR_OFFSET };
     if (i === 4) return layout === 'bottom' // chests are small: come closer, avatar steps aside (phones need the whole row in a narrow view)
-      ? { back: -0.6, h: 6.8, look: 2.8, off: 0.46 }
+      ? { back: 2.2, h: 7.6, look: 2.8, off: 0.46 }
       : { back: -2.2, h: 6.6, look: 2.6, off: 0.46 };
     return { back: 2.4, h: 7.2, look: 4.2, off: AVATAR_OFFSET };
   }

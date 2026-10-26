@@ -91,6 +91,19 @@
             captions: ["Sketches and images generated in the app, the step before the 3D model"],
             linkNote: "Code on request (university GitLab)."
           },
+          daylight: {
+            name: "Daylight: ADHD-friendly Day Planner",
+            sub: "Personal project · Windows & Android",
+            date: "Oct 2026",
+            context: "Solo project, used every day",
+            short: "A calm day planner for Windows and Android: tasks, a focus timer, a journal with a trading journal, and ad-free music, synced between devices.",
+            problem: "Long to-do lists and an empty calendar make it hard to start, especially with ADHD. Daylight shows only what matters now: the day as a sun arc, one task at a time, three priorities, and a small reward for every task you finish.",
+            features: ["The sky follows the clock, the day's time blocks sit on a sun arc, and every finished task becomes a star", "Now card with a focus timer, Big 3 priorities, streaks, morning and evening routines, and a Ctrl+K brain dump inbox", "Journal with a mood and energy check-in, a diary, and a trading journal with results, win rate, average win and loss, and lessons to read before the next session", "Ad-free music: SomaFM radio, Audius songs with playlists, loop and shuffle, and podcasts with resume and playback speed", "Offline first, with cloud sync through Supabase: every task, journal day and playlist syncs on its own, protected by row-level security", "One Next.js codebase in two native shells: Electron for Windows with a title bar that blends into the app, Capacitor for Android", "On Android, songs and podcasts play in a native Media3 (ExoPlayer) service with lock-screen controls, so the queue keeps going with the screen off", "Accounts for friends, an in-app feedback box, and an admin-only inbox to read and close their reports"],
+            resultsMore: ["Used every day on a laptop and a phone, and by a few friends who send feedback through the app", "Music keeps changing songs with the screen off: verified in forced Android Doze on an emulator, even with the web page's process paused", "The same code runs as a Windows app, an Android app and in the browser"],
+            role: "My own project, built around my daily routine: I decide the features, test every version on my phone and laptop, and turn my friends' feedback into the next changes.",
+            captions: ["Today view on Windows: sun arc of the day, focus timer, Big 3 and the task list", "On Android: Today, music with loop and shuffle, and the trading journal"],
+            linkNote: "Private repository. Code available on request."
+          },
           gruppe: {
             name: 'Data Management System', sub: 'Gruppe-I', date: 'Apr – Jun 2023', context: 'Team project',
             short: 'A web platform to upload, view and edit open datasets (CSV, XML, JSON), with maps, charts and a community.',
@@ -166,7 +179,8 @@
           bolleye: 'Bölleye: recognizes machine parts live through the camera, with OpenCV and MobileNet-SSD. Built in 4 days.',
           mon: 'MON: nursery management with Spring Boot, JWT and MySQL, plus a Flutter app.',
           glucose: "Blood Glucose Forecasting: his bachelor project with Abeer Yanek. Seven ML models predict blood sugar up to 45 minutes ahead. Best at 30 min: LSTM, 21.79 mg/dL RMSE, 87.1 % in Clarke Zone A.",
-          generio: "GENERIO: his solo web app that turns a prompt, sketch or photo into a 3D model. FastAPI + Streamlit + OpenCV on top of a generative AI API."
+          generio: "GENERIO: his solo web app that turns a prompt, sketch or photo into a 3D model. FastAPI + Streamlit + OpenCV on top of a generative AI API.",
+          daylight: "Daylight: his own ADHD-friendly day planner for Windows and Android, with a focus timer, a diary and trading journal, ad-free music and Supabase sync. Next.js + Electron + Capacitor, with a native Media3 player on Android."
         }
       }
     },
@@ -259,6 +273,19 @@
             captions: ["In der App erzeugte Skizzen und Bilder, der Schritt vor dem 3D-Modell"],
             linkNote: "Code auf Anfrage (GitLab der Universität)."
           },
+          daylight: {
+            name: "Daylight: Tagesplaner für ADHS",
+            sub: "Eigenes Projekt · Windows & Android",
+            date: "Okt. 2026",
+            context: "Allein umgesetzt, täglich im Einsatz",
+            short: "Ein ruhiger Tagesplaner für Windows und Android: Aufgaben, ein Fokus-Timer, ein Journal mit Trading-Journal und werbefreie Musik, synchronisiert zwischen Geräten.",
+            problem: "Lange To-do-Listen und ein leerer Kalender machen den Anfang schwer, besonders mit ADHS. Daylight zeigt nur, was jetzt zählt: den Tag als Sonnenbogen, eine Aufgabe nach der anderen, drei Prioritäten und eine kleine Belohnung für jede erledigte Aufgabe.",
+            features: ["Der Himmel folgt der Uhrzeit, die Zeitblöcke des Tages liegen auf einem Sonnenbogen, und jede erledigte Aufgabe wird zu einem Stern", "Jetzt-Karte mit Fokus-Timer, Big-3-Prioritäten, Serien, Morgen- und Abendroutinen sowie einem Gedanken-Eingang per Strg+K", "Journal mit Stimmungs- und Energie-Check-in, Tagebuch und Trading-Journal mit Ergebnis, Trefferquote, durchschnittlichem Gewinn und Verlust sowie Lektionen für die nächste Session", "Werbefreie Musik: SomaFM-Radio, Audius-Songs mit Playlists, Wiederholen und Zufallswiedergabe sowie Podcasts mit Fortsetzen und Abspieltempo", "Offline zuerst, mit Cloud-Sync über Supabase: jede Aufgabe, jeder Journaltag und jede Playlist synchronisiert einzeln, geschützt durch Row-Level-Security", "Eine Next.js-Codebasis in zwei nativen Hüllen: Electron für Windows mit einer Titelleiste, die mit der App verschmilzt, und Capacitor für Android", "Unter Android laufen Songs und Podcasts in einem nativen Media3-Dienst (ExoPlayer) mit Sperrbildschirm-Steuerung, damit die Wiedergabe auch bei ausgeschaltetem Bildschirm weiterläuft", "Konten für Freunde, ein Feedback-Feld in der App und ein Posteingang nur für den Admin, um Meldungen zu lesen und abzuschließen"],
+            resultsMore: ["Täglich auf Laptop und Handy im Einsatz, dazu bei einigen Freunden, die über die App Feedback schicken", "Die Musik wechselt die Songs auch bei ausgeschaltetem Bildschirm: geprüft im erzwungenen Android-Doze auf einem Emulator, sogar mit angehaltenem Webseiten-Prozess", "Derselbe Code läuft als Windows-App, als Android-App und im Browser"],
+            role: "Mein eigenes Projekt, gebaut rund um meinen Alltag: Ich entscheide über die Funktionen, teste jede Version auf Handy und Laptop und setze das Feedback meiner Freunde in die nächsten Änderungen um.",
+            captions: ["Heute-Ansicht unter Windows: Sonnenbogen des Tages, Fokus-Timer, Big 3 und die Aufgabenliste", "Unter Android: Heute, Musik mit Wiederholen und Zufallswiedergabe sowie das Trading-Journal"],
+            linkNote: "Privates Repository. Code auf Anfrage."
+          },
           gruppe: {
             name: 'Datenmanagement-System', sub: 'Gruppe-I', date: 'Apr. – Juni 2023', context: 'Teamprojekt',
             short: 'Eine Webplattform zum Hochladen, Ansehen und Bearbeiten offener Datensätze (CSV, XML, JSON), mit Karten, Diagrammen und Community.',
@@ -334,7 +361,8 @@
           bolleye: 'Bölleye: erkennt Maschinenteile live über die Kamera, mit OpenCV und MobileNet-SSD. In 4 Tagen gebaut.',
           mon: 'MON: Kita-Verwaltung mit Spring Boot, JWT und MySQL sowie einer Flutter-App.',
           glucose: "Blutzucker-Prognose: sein Bachelorprojekt mit Abeer Yanek. Sieben ML-Modelle sagen den Blutzucker bis zu 45 Minuten voraus. Bestes bei 30 min: LSTM, 21,79 mg/dL RMSE, 87,1 % in Clarke-Zone A.",
-          generio: "GENERIO: seine allein gebaute Web-App, die aus Text, Skizze oder Foto ein 3D-Modell macht. FastAPI + Streamlit + OpenCV auf einer generativen KI-API."
+          generio: "GENERIO: seine allein gebaute Web-App, die aus Text, Skizze oder Foto ein 3D-Modell macht. FastAPI + Streamlit + OpenCV auf einer generativen KI-API.",
+          daylight: "Daylight: sein eigener Tagesplaner für ADHS, für Windows und Android, mit Fokus-Timer, Tagebuch und Trading-Journal, werbefreier Musik und Supabase-Sync. Next.js + Electron + Capacitor, mit nativem Media3-Player unter Android."
         }
       }
     },
@@ -427,6 +455,19 @@
             captions: ["Croquis et images générés dans l'application, l'étape avant le modèle 3D"],
             linkNote: "Code sur demande (GitLab de l'université)."
           },
+          daylight: {
+            name: "Daylight : planificateur de journée adapté au TDAH",
+            sub: "Projet personnel · Windows et Android",
+            date: "oct. 2026",
+            context: "Projet réalisé seul, utilisé chaque jour",
+            short: "Un planificateur de journée calme pour Windows et Android : tâches, minuteur de concentration, journal avec journal de trading et musique sans publicité, synchronisés entre les appareils.",
+            problem: "Les longues listes de tâches et un agenda vide rendent le démarrage difficile, surtout avec un TDAH. Daylight montre seulement ce qui compte maintenant : la journée sous forme d'arc solaire, une tâche à la fois, trois priorités et une petite récompense pour chaque tâche terminée.",
+            features: ["Le ciel suit l'heure, les créneaux de la journée se placent sur un arc solaire et chaque tâche terminée devient une étoile", "Carte « Maintenant » avec minuteur de concentration, trois priorités (Big 3), séries, routines du matin et du soir, et une boîte à idées via Ctrl+K", "Journal avec suivi de l'humeur et de l'énergie, un journal intime et un journal de trading avec résultat, taux de réussite, gain et perte moyens, et leçons à relire avant la prochaine séance", "Musique sans publicité : radio SomaFM, morceaux Audius avec playlists, répétition et lecture aléatoire, et podcasts avec reprise et vitesse de lecture", "Hors ligne d'abord, avec synchronisation cloud via Supabase : chaque tâche, journée du journal et playlist se synchronise séparément, protégée par la sécurité au niveau des lignes", "Une seule base de code Next.js dans deux applications natives : Electron pour Windows, avec une barre de titre fondue dans l'application, et Capacitor pour Android", "Sur Android, les morceaux et les podcasts sont lus par un service natif Media3 (ExoPlayer) avec commandes sur l'écran de verrouillage, pour que la lecture continue écran éteint", "Comptes pour les amis, formulaire de retour dans l'application et boîte de réception réservée à l'administrateur pour lire et clôturer les signalements"],
+            resultsMore: ["Utilisé chaque jour sur un ordinateur portable et un téléphone, ainsi que par quelques amis qui envoient leurs retours depuis l'application", "La musique continue de changer de morceau écran éteint : vérifié en mode Doze Android forcé sur un émulateur, même avec le processus de la page web suspendu", "Le même code fonctionne comme application Windows, application Android et dans le navigateur"],
+            role: "Mon propre projet, construit autour de mon quotidien : je décide des fonctionnalités, je teste chaque version sur mon téléphone et mon ordinateur, et je transforme les retours de mes amis en prochaines améliorations.",
+            captions: ["Vue « Aujourd'hui » sur Windows : arc solaire de la journée, minuteur de concentration, Big 3 et liste des tâches", "Sur Android : Aujourd'hui, musique avec répétition et lecture aléatoire, et journal de trading"],
+            linkNote: "Dépôt privé. Code disponible sur demande."
+          },
           gruppe: {
             name: 'Système de gestion de données', sub: 'Gruppe-I', date: 'avr. – juin 2023', context: "Projet d'équipe",
             short: 'Une plateforme web pour importer, consulter et modifier des jeux de données ouverts (CSV, XML, JSON), avec cartes, graphiques et communauté.',
@@ -502,7 +543,8 @@
           bolleye: 'Bölleye : reconnaît des pièces de machine en direct par caméra, avec OpenCV et MobileNet-SSD. Construit en 4 jours.',
           mon: 'MON : gestion de crèche avec Spring Boot, JWT et MySQL, plus une application Flutter.',
           glucose: "Prévision de la glycémie : son projet de licence avec Abeer Yanek. Sept modèles de ML prédisent la glycémie jusqu'à 45 minutes. Meilleur à 30 min : LSTM, 21,79 mg/dL de RMSE, 87,1 % en zone A de Clarke.",
-          generio: "GENERIO : son application web, réalisée seul, qui transforme un texte, un croquis ou une photo en modèle 3D. FastAPI + Streamlit + OpenCV sur une API d'IA générative."
+          generio: "GENERIO : son application web, réalisée seul, qui transforme un texte, un croquis ou une photo en modèle 3D. FastAPI + Streamlit + OpenCV sur une API d'IA générative.",
+          daylight: "Daylight : son propre planificateur de journée adapté au TDAH, pour Windows et Android, avec minuteur de concentration, journal intime et journal de trading, musique sans publicité et synchronisation Supabase. Next.js + Electron + Capacitor, avec un lecteur Media3 natif sur Android."
         }
       }
     },
@@ -595,6 +637,19 @@
             captions: ["رسوم وصور مولَّدة داخل التطبيق، وهي الخطوة التي تسبق النموذج ثلاثي الأبعاد"],
             linkNote: "الكود متاح عند الطلب (GitLab الجامعة)."
           },
+          daylight: {
+            name: "Daylight: مخطط يومي مناسب لاضطراب فرط الحركة وتشتت الانتباه",
+            sub: "مشروع شخصي · Windows وAndroid",
+            date: "أكتوبر 2026",
+            context: "مشروع أنجزته وحدي وأستخدمه يوميًا",
+            short: "مخطط يومي هادئ لـ Windows وAndroid: مهام، ومؤقت تركيز، ويوميات مع يوميات للتداول، وموسيقى بلا إعلانات، متزامنة بين الأجهزة.",
+            problem: "القوائم الطويلة والتقويم الفارغ يصعّبان البدء، خاصة مع اضطراب فرط الحركة وتشتت الانتباه. يعرض Daylight ما يهم الآن فقط: اليوم كقوس شمسي، ومهمة واحدة في كل مرة، وثلاث أولويات، ومكافأة صغيرة عن كل مهمة تنجزها.",
+            features: ["السماء تتبع الساعة، وفترات اليوم تقع على قوس شمسي، وكل مهمة منجزة تتحول إلى نجمة", "بطاقة «الآن» مع مؤقت تركيز وثلاث أولويات (Big 3) وسلاسل أيام وروتين صباحي ومسائي وصندوق لتفريغ الأفكار عبر Ctrl+K", "يوميات مع تسجيل المزاج والطاقة، ومذكرات، ويوميات للتداول تعرض النتيجة ونسبة الربح ومتوسط الربح والخسارة ودروسًا تقرؤها قبل الجلسة التالية", "موسيقى بلا إعلانات: راديو SomaFM، وأغاني Audius مع قوائم تشغيل وتكرار وتشغيل عشوائي، وبودكاست مع استئناف وسرعة تشغيل", "يعمل دون اتصال أولًا مع مزامنة سحابية عبر Supabase: كل مهمة ويوم في اليوميات وقائمة تشغيل يتزامن وحده، محميًا بأمان على مستوى الصفوف", "قاعدة كود واحدة بـ Next.js داخل تطبيقين أصليين: Electron لـ Windows بشريط عنوان يندمج مع التطبيق، وCapacitor لـ Android", "على Android تُشغَّل الأغاني والبودكاست عبر خدمة Media3 أصلية (ExoPlayer) مع أزرار على شاشة القفل، فيستمر التشغيل والشاشة مطفأة", "حسابات للأصدقاء، وخانة لإرسال الملاحظات داخل التطبيق، وصندوق وارد خاص بالمشرف لقراءة البلاغات وإغلاقها"],
+            resultsMore: ["أستخدمه يوميًا على الحاسوب والهاتف، ويستخدمه بعض الأصدقاء الذين يرسلون ملاحظاتهم من داخل التطبيق", "تستمر الموسيقى في الانتقال بين الأغاني والشاشة مطفأة: تم التحقق في وضع Doze المفروض على محاكي Android، حتى مع إيقاف عملية صفحة الويب", "الكود نفسه يعمل كتطبيق Windows وتطبيق Android وفي المتصفح"],
+            role: "مشروعي الخاص، بنيته حول يومي: أقرر الميزات، وأختبر كل نسخة على هاتفي وحاسوبي، وأحوّل ملاحظات أصدقائي إلى التحسينات التالية.",
+            captions: ["عرض «اليوم» على Windows: القوس الشمسي لليوم، ومؤقت التركيز، وBig 3، وقائمة المهام", "على Android: اليوم، والموسيقى مع التكرار والتشغيل العشوائي، ويوميات التداول"],
+            linkNote: "مستودع خاص. الكود متاح عند الطلب."
+          },
           gruppe: {
             name: 'نظام إدارة البيانات', sub: 'Gruppe-I', date: 'أبريل – يونيو 2023', context: 'مشروع جماعي',
             short: 'منصة ويب لرفع مجموعات البيانات المفتوحة (CSV وXML وJSON) وعرضها وتعديلها، مع خرائط ورسوم بيانية ومجتمع.',
@@ -670,7 +725,8 @@
           bolleye: 'Bölleye: يتعرّف على قطع الآلات مباشرة عبر الكاميرا باستخدام OpenCV وMobileNet-SSD. بُني في 4 أيام.',
           mon: 'MON: نظام إدارة حضانة بـ Spring Boot وJWT وMySQL مع تطبيق Flutter.',
           glucose: "التنبؤ بسكر الدم: مشروع البكالوريوس مع عبير يانك. سبعة نماذج تعلّم آلي تتنبأ بالسكر حتى 45 دقيقة. الأفضل عند 30 دقيقة: LSTM بـ RMSE قدره 21.79 mg/dL و87.1% في منطقة Clarke A.",
-          generio: "GENERIO: تطبيق ويب بناه وحده يحوّل نصًا أو رسمًا أو صورة إلى نموذج ثلاثي الأبعاد. FastAPI + Streamlit + OpenCV فوق واجهة ذكاء اصطناعي توليدي."
+          generio: "GENERIO: تطبيق ويب بناه وحده يحوّل نصًا أو رسمًا أو صورة إلى نموذج ثلاثي الأبعاد. FastAPI + Streamlit + OpenCV فوق واجهة ذكاء اصطناعي توليدي.",
+          daylight: "Daylight: مخططه اليومي الخاص لـ Windows وAndroid، مناسب لاضطراب فرط الحركة وتشتت الانتباه، مع مؤقت تركيز ومذكرات ويوميات تداول وموسيقى بلا إعلانات ومزامنة Supabase. Next.js + Electron + Capacitor مع مشغّل Media3 أصلي على Android."
         }
       }
     }
@@ -679,6 +735,7 @@
   /* Chat intents: keywords from every language, so a German question works on the English page.
      `go` = section index to offer travel to. Order matters: specific intents first. */
   window.CHAT_INTENTS = [
+    { id: 'daylight', go: 4, words: ['daylight', 'planner', 'planer', 'tagesplaner', 'planificateur', 'to-do', 'todo', 'adhd', 'adhs', 'tdah', 'trading', 'journal', 'tagebuch', 'diary', 'electron', 'capacitor', 'android', 'مخطط', 'تداول'] },
     { id: 'glucose', go: 4, words: ['glucose', 'glukose', 'glycémie', 'glycemie', 'blood sugar', 'blutzucker', 'diabet', 'insulin', 'bachelorprojekt', 'bachelor project', 'projet de licence', 'forecast', 'prognose', 'prévision', 'machine learning', 'lstm', 'pytorch', 'سكر', 'السكري', 'أنسولين'] },
     { id: 'generio', go: 4, words: ['generio', '3d', 'dreidimensional', 'sketch', 'skizze', 'croquis', 'fastapi', 'streamlit', 'generative', 'generativ', 'génératif', 'générative', 'ثلاثي', 'ثلاثية'] },
     { id: 'gruppe', go: 4, words: ['gruppe', 'data management', 'datensatz', 'datenplattform', 'données'] },
