@@ -921,7 +921,20 @@
     camera.updateProjectionMatrix();
   }
 
-  const nextFrame = () => new Promise((r) => requestAnimationFrame(() => setTimeout(r, 30)));
+  /* A hidden or backgrounded document never fires requestAnimationFrame, so a bare rAF await
+     stalls World.init forever: the loader never clears and the canvas stays at its default
+     300x150. Whichever arrives first wins, and the 30 ms break keeps the build chunked so the
+     loader still paints. */
+  const nextFrame = () => new Promise((resolve) => {
+    let settled = false;
+    const step = () => {
+      if (settled) return;
+      settled = true;
+      setTimeout(resolve, 30);
+    };
+    requestAnimationFrame(step);
+    setTimeout(step, 120);
+  });
 
   /* ---------- public API ---------- */
   World.init = async function (o) {
